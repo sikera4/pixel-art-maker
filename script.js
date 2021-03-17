@@ -156,12 +156,12 @@ function floodFill(ro, co, replacedColour) {
     }
     let node = grid[ro][co];
     let targetColour = node.style.backgroundColor;
-    if (targetColour !== replacedColour && targetColour !== 'white') {
+    if (targetColour !== replacedColour) {
         return
     }
     node.style.backgroundColor = fillColour;
-    floodFill(ro - 1, co, replacedColour);
-    floodFill(ro + 1, co, replacedColour);
-    floodFill(ro, co - 1, replacedColour);
-    floodFill(ro, co + 1, replacedColour);
+    floodFill(parseInt(ro) - 1, co, replacedColour);
+    floodFill(parseInt(ro) + 1, co, replacedColour);
+    floodFill(ro, parseInt(co) - 1, replacedColour);
+    floodFill(ro, parseInt(co) + 1, replacedColour);
 }
